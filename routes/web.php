@@ -14,5 +14,20 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $tasks = [
+        'Wake',
+        'Pray',
+        'Eat',
+        'Sleep'
+    ];
+
+
+    return view('welcome', [
+        'tasks' => $tasks,
+        'title' => request('title')
+        ]);
+});
+
+Route::get('/contact', function () {
+    return view('contact');
 });
