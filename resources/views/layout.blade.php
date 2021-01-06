@@ -8,8 +8,7 @@
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
 </head>
 <body class="bg-gray-800 text-gray-300">
-
-    <nav class="flex space-x-2 py-3 px-1 bg-gray-900 container justify-self-center sticky top-0">
+<nav class="flex space-x-2 py-3 px-1 bg-gray-900 container justify-self-center sticky top-0">
         <a href="/" class="flex-none">Upcinema</a>
         <form class="flex flex-auto bg-white">
             <input type="search" class="flex-auto">
@@ -24,6 +23,10 @@
             <a href="/login">Login</a>
         </div>
     </nav>
+
+    </header>
+
+
 
     @yield('content')
 

@@ -5,7 +5,9 @@
     {{$title}}
     <ul>
     @foreach ($tasks as $task)
-            <li> {{ $task   }} </li>
+        <li> {{ $task   }} </li>
     @endforeach
     </ul>
+
+    
 @endsection
