@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('title', 'Upcinema')</title>
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    
 </head>
 <body class="text-gray-300 bg-gray-800 "> 
     <nav class="flex flex-wrap items-center justify-between px-2 py-4 space-x-2 bg-gray-900 md:space-x-16">
@@ -24,13 +26,16 @@
         </div>
     </nav>
 
-    <section class="mx-2">
+    <section>
         @yield('content')
     </section>
 
-    <footer class="fixed flex flex-wrap w-full px-2 py-4 bg-gray-900 spacex-2 px-auto b-0">
+    <footer class="flex flex-wrap w-full px-2 py-4 bg-gray-900 spacex-2 px-auto b-0">
         <p class="mx-auto text-center">&copy; 2015 RapidTables.com</p>
     </footer>
     
+    <script>
+        var mySwiper = new Swiper ('.swiper-container');
+      </script>
 </body>
 </html>
