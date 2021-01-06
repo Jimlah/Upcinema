@@ -2,10 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('title', 'Upcinema')</title>
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
+
 </head>
 <body class="bg-gray-800 text-gray-300">
 <nav class="flex space-x-2 py-3 px-1 bg-gray-900 container justify-self-center sticky top-0">
@@ -33,5 +35,13 @@
     <footer class="flex space-x-2 fixed bottom-0 py-3 px-1 bg-gray-900 container justify-self-center">
         <p class="text-center">&copy; 2015 RapidTables.com<p>
     </footer>
+
+    <script>
+        $.ajaxSetup({
+    headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+});
+    </script>
 </body>
 </html>
