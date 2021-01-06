@@ -26,13 +26,13 @@
         </div>
     </nav>
 
-    <section>
+    <section class="mb-12">
 
         @yield('content')
 
-
-    <footer class="flex flex-wrap w-full px-2 py-4 bg-gray-900 spacex-2 px-auto b-0">
-        <p class="mx-auto text-center">&copy; 2015 RapidTables.com</p>
+    </section>
+    <footer class="fixed inset-x-0 bottom-0 z-50 flex flex-wrap w-full px-2 py-4 bg-gray-900 spacex-2 px-auto">
+        <p class="mx-auto text-center">&copy; 2021 Samuel & Abdullahi</p>
     </footer>
 </body>
 </html>
