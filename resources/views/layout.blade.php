@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     
 </head>
-<body class="bg-gray-800 text-gray-300">
-<nav class="flex space-x-2 py-3 px-1 bg-gray-900 container justify-self-center sticky top-0">
+<body class="text-gray-300 bg-gray-800">
+<nav class="container sticky top-0 flex px-1 py-3 space-x-2 bg-gray-900 justify-self-center">
 
         <a href="/" class="flex-none">Upcinema</a>
         <form class="flex text-gray-900 bg-white md:flex-none md:w-4/12">
@@ -27,12 +27,8 @@
         </div>
     </nav>
 
-<<<<<<< HEAD
     <section>
-=======
 
-    <section class="mx-2">
->>>>>>> origin/master
         @yield('content')
 
 
