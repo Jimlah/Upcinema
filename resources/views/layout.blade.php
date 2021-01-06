@@ -9,8 +9,9 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     
 </head>
-<body class="text-gray-300 bg-gray-800 "> 
-    <nav class="flex flex-wrap items-center justify-between px-2 py-4 space-x-2 bg-gray-900 md:space-x-16">
+<body class="bg-gray-800 text-gray-300">
+<nav class="flex space-x-2 py-3 px-1 bg-gray-900 container justify-self-center sticky top-0">
+
         <a href="/" class="flex-none">Upcinema</a>
         <form class="flex text-gray-900 bg-white md:flex-none md:w-4/12">
             <input type="search" class="flex-auto h-8 p-2 outline-none ">
@@ -26,9 +27,14 @@
         </div>
     </nav>
 
+<<<<<<< HEAD
     <section>
+=======
+
+    <section class="mx-2">
+>>>>>>> origin/master
         @yield('content')
-    </section>
+
 
     <footer class="flex flex-wrap w-full px-2 py-4 bg-gray-900 spacex-2 px-auto b-0">
         <p class="mx-auto text-center">&copy; 2015 RapidTables.com</p>

@@ -163,4 +163,5 @@ var swiper1 = new Swiper('.swiper-con', {
       return direction;
     }
 </script>
+
 @endsection
