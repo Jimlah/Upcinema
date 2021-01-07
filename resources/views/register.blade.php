@@ -5,7 +5,7 @@
         <h1 class="text-lg text-gray-300 uppercase mb-5 flex justify-center">
             Create an account
         </h1>
-        <form action="" method="post">
+        <form action="/login" method="post">
             <div class="flex justify-center">
                 <input type="text" 
                     name="username" 

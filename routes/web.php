@@ -35,7 +35,7 @@ Route::get('/contact', function () {
 
 Route::group([], function(){
     Route::get('/register', [RegisterController::class, 'index']);
-    Route::post('/register', [RegisterController::class, 'register']);
+    // Route::post('/register', [RegisterController::class, 'register']);
 
     Route::get('/login', function () {
         return view('login');
@@ -45,4 +45,3 @@ Route::group([], function(){
         return view('forgetpass');
     });
 });
-
