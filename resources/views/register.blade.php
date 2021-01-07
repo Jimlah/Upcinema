@@ -5,7 +5,8 @@
         <h1 class="text-lg text-gray-300 uppercase mb-5 flex justify-center">
             Create an account
         </h1>
-        <form action="/login" method="post">
+        <form action="/register" method="post">
+            @csrf
             <div class="flex justify-center">
                 <input type="text" 
                     name="username" 
@@ -30,7 +31,7 @@
             <div class="flex justify-center">
                 <input 
                     type="password" 
-                    name="password1" 
+                    name="password2" 
                     placeholder="Confirm password" 
                     class="w-96 md:w-full mb-4 p-2 outline-none text-white border-b-2 bg-gray-800 focus:bg-gray-600 duration-200 easy-in-out rounded"> 
             </div>
