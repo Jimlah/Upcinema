@@ -112,6 +112,15 @@
     </div>
 </div>
 
+<div class="container w-1/12 mx-auto mt-5 mb-24 text-center">
+    <div class="justify-items-center">
+        <h1>Featured event <hr class="border-2 border-red-500"> </h1>
+    </div>
+    <div class="grid grid-cols-1 gap-4 mx-auto mt-10 md:grid-cols-5">
+        <div class="text-center">Items</div>
+    </div>
+</div>
+
 <!-- Swiper JS -->
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
