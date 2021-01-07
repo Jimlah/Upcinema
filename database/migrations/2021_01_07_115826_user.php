@@ -30,6 +30,6 @@ class User extends Migration
      */
     public function down()
     {
-        Shema::dropIfExists('reg_users');
+        Schema::dropIfExists('reg_users');
     }
 }
