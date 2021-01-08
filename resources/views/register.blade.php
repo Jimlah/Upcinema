@@ -5,6 +5,16 @@
         <h1 class="text-lg text-gray-300 uppercase mb-5 flex justify-center">
             Create an account
         </h1>
+
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+                </ul>
+            </div>
+        @endif
         <form action="/register" method="post">
             @csrf
             <div class="flex justify-center">

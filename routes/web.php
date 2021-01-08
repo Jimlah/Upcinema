@@ -15,18 +15,7 @@ use App\Http\Controllers\RegisterController;
 */
 
 Route::get('/', function () {
-    $tasks = [
-        'Wake',
-        'Pray',
-        'Eat',
-        'Sleep'
-    ];
-
-
-    return view('welcome', [
-        'tasks' => $tasks,
-        'title' => request('title')
-        ]);
+    return view('welcome');
 });
 
 Route::get('/contact', function () {
@@ -34,7 +23,9 @@ Route::get('/contact', function () {
 });
 
 Route::group([], function(){
-    Route::get('/register', [RegisterController::class, 'index']);
+    Route::get('/register',function(){
+        return view('register');
+    });
     Route::post('/register', [RegisterController::class, 'register']);
 
     Route::get('/login', function () { 

@@ -2,26 +2,36 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\reg_users;
+
+use App\Models\RegUsers;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
+use Illuminate\Support\Facades\DB;
 
 class RegisterController extends Controller
 {
-    public function index(){
-        return view('register');
-    } 
+    public function register(Request $request, Response $response){
+        
+        $user_record = new RegUsers();
 
-    public function register(){
+        $user_record->username = $request->input('username');
+        $user_record->email = $request->input('email');
+        $user_record->password = $request->input('password');
+        $password2 = $request->input('password2');
+        $user_record->status;
+        // var_dump($user_record->status); die();
+        
+        $validate = $this->validate($request,[
+            'username' => 'required|unique:reg_users',
+            'email' => 'required|unique:reg_users',
+            'password' => 'same:password2|required',
+        ]);
+ 
+        $user_record->save();
+        // RegUsers::create($request->all());
+        // DB::insert('insert into reg_users(username,email,password,status) value(?,?,?)',[$user_record->username, $user_record->email, $user_record->password]);
 
-        $user_record = new reg_users();
+        return view('/register');
 
-        $user_record->name = request('username');
-        $user_record->email = request('email');
-        $user_record->password = request('password');
-        $user_record->password2 = request('password2');
-
-        var_dump($user_record);
-        die();
-        return redirect('/');
     }
 }
