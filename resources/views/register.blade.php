@@ -2,20 +2,19 @@
 
 @section('content')
     <div class="lg:w-3/12 mx-auto mt-20">
-        <h1 class="text-lg text-gray-300 uppercase mb-5 flex justify-center">
-            Create an account
-        </h1>
-
         @if ($errors->any())
             <div class="alert alert-danger">
                 <ul>
                 @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
+                    <li class="text-sm text-red-400 mb-5 flex justify-center">{{ $error }}</li>
                 @endforeach
                 </ul>
             </div>
         @endif
-        <form action="/register" method="post">
+        <h1 class="text-lg text-gray-300 uppercase mb-5 flex justify-center">
+            Create an account
+        </h1>
+        <form action="" method="post">
             @csrf
             <div class="flex justify-center">
                 <input type="text" 

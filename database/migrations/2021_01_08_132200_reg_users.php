@@ -19,6 +19,7 @@ class RegUsers extends Migration
             $table->string('email');
             $table->string('password');
             $table->integer('status');
+            $table->integer('access');
             $table->timestamps();
         });
     }

@@ -2,14 +2,31 @@
 
 @section('content')
     <div class="lg:w-3/12 mx-auto mt-20">
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                @foreach ($errors->all() as $error)
+                    <li class="text-sm text-red-400 mb-5 flex justify-center">{{ $error }}</li>
+                @endforeach
+                </ul>
+            </div>
+        @endif
+
+        @if ($message = Session::get('msg'))
+            <p class="text-sm text-red-400 mb-5 flex justify-center">{{session('msg')}}</p>
+        @endif
+
+        <p class="text-sm text-green-300 mb-5 flex justify-center">{{session('mssg')}}</p>
+
         <h1 class="text-lg text-gray-300 uppercase mb-5 flex justify-center">
             Login your account
         </h1>
         <form action="" method="post">
+            {{@csrf_field()}}
             <div class="flex justify-center">
                 <input type="text" 
-                    name="username" 
-                    placeholder="Username" 
+                    name="email" 
+                    placeholder="Email" 
                     class="w-96 md:w-full mb-4 p-2 outline-none text-white border-b-2 bg-gray-800 focus:bg-gray-600 duration-200 easy-in-out rounded">
             </div>
             <div class="flex justify-center">
@@ -45,7 +62,7 @@
             </a>
         </div>
 
-        <div class="flex justify-center mt-10">
+        <div class="flex justify-center mt-5">
             <a href="/register">Don't have an account? Sign Up</a>
         </div>
         
