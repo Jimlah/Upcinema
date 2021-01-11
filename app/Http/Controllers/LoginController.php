@@ -17,16 +17,18 @@ class LoginController extends Controller
     public function login(Request $request)
     {
         $this->validate($request, [
-            'email' => 'required|email',
+            'email' => 'required',
             'password' => 'required'
         ]);
 
+        $fieldtype = filter_var($request->input('email'), FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
+
+
         $user_data = [
-            'email' => $request->input('email'),
+            $fieldtype => $request->input('email'),
             'password' => $request->input('password')
         ];
-        
-        
+          
         if(Auth::attempt($user_data)){
             return redirect('dashboard');
         }
