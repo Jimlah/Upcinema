@@ -23,14 +23,13 @@ class LoginController extends Controller
 
         $fieldtype = filter_var($request->input('email'), FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
 
-
         $user_data = [
             $fieldtype => $request->input('email'),
             'password' => $request->input('password')
         ];
           
         if(Auth::attempt($user_data)){
-            return redirect('dashboard');
+            return redirect('dashboard/index');
         }
 
         return back()->with('msg', 'Incorrect login details');

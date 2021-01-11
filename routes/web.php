@@ -1,5 +1,6 @@
 <?php
 
+
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
@@ -15,6 +16,10 @@ use App\Http\Controllers\RegisterController;
 |
 */
 
+Route::get('/contact', function(){
+    return view('contact');
+});
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -29,4 +34,14 @@ Route::group([], function(){
     Route::get('/forgetpass', function () {
         return view('forgetpass');
     });
+});
+
+// users route
+Route::group([], function(){
+
+    // Route::get('/dashboard/index', function(){
+    //     return view('dashboard/index');
+    // });
+
+    Route::get('/dashboard/index', [MainController::class, 'index']);
 });
