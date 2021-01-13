@@ -21,8 +21,15 @@
             </button>
         </form>
         <div class="flex items-center flex-none space-x-1">
-            <a href="/register" class="p-1 border-2 border-gray-700 rounded-md hover:text-gray-500">Register</a>
-            <a href="/login" class="p-2 bg-gray-800 rounded-md hover:bg-gray-700">Login</a>
+            @if((Auth::user()))
+            <div>Hey {{$username}}</div>
+            <a href="/logout" class="p-1 border-2 border-gray-700 rounded-md hover:text-gray-500">Logout</a>
+            @else
+                <a href="/register" class="p-1 border-2 border-gray-700 rounded-md hover:text-gray-500">Register</a>
+                <a href="/login" class="p-2 bg-gray-800 rounded-md hover:bg-gray-700">Login</a>
+            @endif
+            
+            
         </div>
     </nav>
 

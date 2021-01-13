@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\Dashboard\MainController;
+use App\Http\App\Http\Middleware;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,11 +22,11 @@ Route::get('/contact', function(){
     return view('contact');
 });
 
-Route::get('/', function () {
+Route::middleware('auth_user')->get('/', function () {
     return view('welcome');
 });
 
-Route::group([], function(){
+Route::middleware('auth_user')->group(function(){
     Route::get('/register', [RegisterController::class, 'show']);
     Route::post('/register', [RegisterController::class, 'register']);
 
@@ -38,6 +39,7 @@ Route::group([], function(){
 });
 
 // users route
-Route::group([], function(){
+Route::middleware('check')->group(function(){
     Route::get('/dashboard/index', [MainController::class, 'index']);
+    Route::get('/logout', [MainController::class, 'logout']);
 });
