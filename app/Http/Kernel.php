@@ -43,6 +43,14 @@ class Kernel extends HttpKernel
             \App\Http\Middleware\UserCheck::class,
         ],
 
+        'admin_middleware' => [
+            \App\Http\Middleware\AdminMiddleware::class,
+        ],
+
+        'user_middleware' => [
+            \App\Http\Middleware\UserMiddleware::class,
+        ],
+
         'api' => [
             'throttle:api',
             \Illuminate\Routing\Middleware\SubstituteBindings::class,

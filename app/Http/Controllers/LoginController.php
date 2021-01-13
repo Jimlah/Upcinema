@@ -27,10 +27,19 @@ class LoginController extends Controller
             $fieldtype => $request->input('email'),
             'password' => $request->input('password')
         ];
+
+        $access_type = ['user' => 1, 'admin'=>0];
           
         if(Auth::attempt($user_data)){
-            return redirect('dashboard/index');
+            $access = Auth::user()->access;
+
+            if($access == $access_type['admin']){
+                return redirect('admin/index');
+            }
+                return redirect('dashboard/index');
         }
+
+        
 
         return back()->with('msg', 'Incorrect login details');
     }

@@ -13,13 +13,14 @@
 
         <a href="/" class="flex-none">Upcinema</a>
         <form class="flex text-gray-900 bg-white md:flex-none md:w-4/12">
-            <input type="search" class="flex-auto h-8 p-2 outline-none ">
+            <input type="search" name="search" id="search" class="flex-auto h-8 p-2 outline-none ">
             <button type="submit" class="">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                 </svg>
             </button>
         </form>
+        <div id="app"></div>
         <div class="flex items-center flex-none space-x-1">
             @if((Auth::user()))
             <div>Hey {{$username}}</div>
@@ -32,10 +33,10 @@
             
         </div>
     </nav>
-
     <section class="mb-12">
 
-        @yield('content')
+@yield('content')
+
 
     </section>
     <footer class="fixed inset-x-0 bottom-0 z-50 flex flex-wrap w-full px-2 py-4 bg-gray-900 spacex-2 px-auto">

@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class CheckAuth
+class UserMiddleware
 {
     /**
      * Handle an incoming request.
@@ -17,18 +17,10 @@ class CheckAuth
      */
     public function handle(Request $request, Closure $next)
     {
-        $user = Auth::user();
+        $user = Auth::user()->access;
 
-        if($user){
-            if($user->access == 1){
-                return redirect('dashboard/index');
-            }
-        }
-        
-        if($user){
-            if($user->access == 0){
-                return redirect('admin/index');
-            }
+        if(!$user ==  1){
+            return back();
         }
 
         return $next($request);

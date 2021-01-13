@@ -1,11 +1,12 @@
 <?php
 
 
+use App\Http\App\Http\Middleware;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Dashboard\MainController;
-use App\Http\App\Http\Middleware;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,7 +40,13 @@ Route::middleware('auth_user')->group(function(){
 });
 
 // users route
-Route::middleware('check')->group(function(){
+Route::middleware(['check', 'user_middleware'])->group(function(){
     Route::get('/dashboard/index', [MainController::class, 'index']);
     Route::get('/logout', [MainController::class, 'logout']);
+});
+
+//admin route
+Route::middleware(['check', 'admin_middleware'])->group(function(){
+    Route::get('/admin/index', [AdminController::class, 'index']);
+    Route::get('/logout', [AdminController::class, 'logout']);
 });
